@@ -9,6 +9,8 @@
         :current-slide="currentSlide"
         :index="index"
         :direction="direction"
+        @mouseenter="stopSliderTimer"
+        @mouseout="startSlideTimer"
     
       ></carousel-item>
       <carousel-controls
