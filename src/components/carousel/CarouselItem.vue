@@ -1,30 +1,38 @@
 <template>
-   
-   <transition name="slide-out">
-     <div class="carousel-item" v-show="currentSlide===index">
-        <img  :src="slide" width="900" height="400">
-      </div>
-   </transition>
+  <transition :name="transitionName">
+    <div
+      class="carousel-item"
+      v-show="currentSlide === index"
+      @mouseenter="$emit('mouseenter')"
+      @mouseout="$emit('mouseout')"
+    >
+      <img :src="slide" />
+    </div>
+  </transition>
 </template>
 
 <script>
-    
-export default  {
-
-    props:["slide","index","currentSlide"],
-    data: ()=>({
-      cssItem: "carousel-item"
-    })
-
-}
-
+export default {
+  emits: ["mouseenter", "mouseout"],
+  props: ["slide", "currentSlide", "index", "direction"],
+  computed: {
+    transitionName() {
+      return this.direction === "right" ? "slide-out" : "slide-in";
+    },
+  },
+};
 </script>
 
 <style scoped>
-  .carousel-item {
- margin: 200px;
-  }
-  .slide-out-enter-active,
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.slide-out-enter-active,
 .slide-out-leave-active,
 .slide-in-enter-active,
 .slide-in-leave-active {
@@ -42,7 +50,4 @@ export default  {
 .slide-in-leave-to {
   transform: translateX(100%);
 }
-  
- 
-  </style>
-  
+</style>

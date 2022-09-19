@@ -1,36 +1,30 @@
 <template>
-  <Div class="justifyme"> 
-    <Carousel :slides="slides"></Carousel>
-  </Div>
-
+  <div> <carousel
+    :slides="slides"
+    controls
+    indicators
+    :interval="3000"
+    :width="1000"
+    :height="450"
+  ></carousel></div>
+ 
 </template>
 
 <script>
-import  Carousel from "./components/carousel/Carousel.vue";
-export default{
- components:  {Carousel} ,
+import Carousel from "./components/carousel/Carousel.vue";
+
+export default {
+  components: { Carousel },
   data: () => ({
     slides: [
-      "src/assets/img/slide-1.jfif",
-      "src/assets/img/slide-2.jfif",
-      "src/assets/img/slide-3.jfif",
-      "src/assets/img/slide-4.jfif",
-      "src/assets/img/slide-5.jfif",
-     
+    "src/assets/img/slide-1.jpg",
+      "src/assets/img/slide-2.jpg",
+      "src/assets/img/slide-3.jpg",
+      "src/assets/img/slide-4.jpg",
+      "src/assets/img/slide-5.jpg",
     ],
   }),
-}
+};
 </script>
 
-
-<style scoped>
-   .justifyme {
-        justify-self: center;
-        display: flex;
-        flex-direction: row;
-
-        
-    }
-</style>
-
-
+<style></style>
