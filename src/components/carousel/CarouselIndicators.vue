@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  emits:['switch'],
   props: ["count", "active"],
 };
 </script>

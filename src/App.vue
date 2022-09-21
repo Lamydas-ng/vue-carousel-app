@@ -17,11 +17,13 @@ export default {
   components: { Carousel },
   data: () => ({
     slides: [
-    "src/assets/img/slide-1.jpg",
-      "src/assets/img/slide-2.jpg",
-      "src/assets/img/slide-3.jpg",
-      "src/assets/img/slide-4.jpg",
-      "src/assets/img/slide-5.jpg",
+    "src/assets/img/food-1.jpg",
+    "src/assets/img/food-2.jpg",
+    "src/assets/img/food-3.jpg",
+    "src/assets/img/food-4.jpg",
+     "src/assets/img/food-5.jpg",
+    "src/assets/img/slide-3.jpg",
+    "src/assets/img/slide-5.jpg",
     ],
   }),
 };
